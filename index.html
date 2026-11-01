@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ECORAM Mangalia | Servicii Profesionale de Curățenie & Mentenanță</title>
+
+   <!-- Browser Tab Icon (Favicon) -->
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
   
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,10 +52,10 @@
       <!-- TOP-LEFT LOGO -->
       <a href="index.html" class="brand-logo">
         <!-- To use your own image logo, uncomment below and remove .brand-icon -->
-         <div class="brand-icon">
+       <!--  <div class="brand-icon">
           <i data-lucide="sparkles"></i>
-        </div>
-         <img src="img/logo.jpg" alt="Ecoram Logo" style="height: 50px; width: auto;" />
+        </div> -->
+         <img src="img/logo.png" alt="Ecoram Logo" style="height: 55px; width: auto;" />
       
        <!-- <div>
           <div class="brand-name">ECO<span class="text-accent">RAM</span></div>
@@ -420,28 +424,91 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div style="font-weight: 800; color: #fff;">
+     <!-- <div style="font-weight: 800; color: #fff;">
         ECO<span class="text-accent">RAM</span> MANGALIA
-      </div>
+      </div>-->
+      <img src="img/logo.png" alt="Ecoram Logo" style="height: 55px; width: auto;" />
       <p>© 2026 ECORAM TOTALSERV / ECORAM WASH S.R.L. Mangalia. Toate drepturile rezervate.</p>
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <!-- SCRIPTS -->
   <script>
     lucide.createIcons();
 
     // 1. Mobile Navigation Toggle
     const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+    const navLinksContainer = document.getElementById('navLinks');
+    const navItems = document.querySelectorAll('#navLinks a');
+    const sections = document.querySelectorAll('section[id]');
+
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-    document.querySelectorAll('#navLinks a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+      navLinksContainer.classList.toggle('open');
     });
 
-    // 2. Scroll Reveal Observer (animates elements as you scroll down)
+    // 2. Click-to-Activate + ScrollSpy Navigation
+    let isClickScrolling = false;
+    let scrollTimeout;
+
+    function setActiveLink(id) {
+      navItems.forEach(link => {
+        const isMatch = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('active', isMatch);
+      });
+    }
+
+    // When clicking a nav button: highlight immediately & close mobile menu
+    navItems.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetId = link.getAttribute('href').substring(1);
+        setActiveLink(targetId);
+        navLinksContainer.classList.remove('open');
+
+        // Pause ScrollSpy briefly while smooth-scroll travels to the clicked section
+        isClickScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isClickScrolling = false;
+        }, 750);
+      });
+    });
+
+    // When scrolling manually: automatically highlight the current section
+    function handleScrollSpy() {
+      const siteHeader = document.getElementById('siteHeader');
+      siteHeader.classList.toggle('scrolled', window.scrollY > 20);
+
+      if (isClickScrolling) return;
+
+      // Trigger point: 35% down from the top of the screen
+      const scrollTrigger = window.scrollY + window.innerHeight * 0.35;
+
+      // If user scrolled to the very bottom, highlight the last section (Contact)
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 40) {
+        const lastSection = sections[sections.length - 1];
+        if (lastSection) setActiveLink(lastSection.getAttribute('id'));
+        return;
+      }
+
+      let currentSectionId = sections[0]?.getAttribute('id') || 'acasa';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollTrigger >= sectionTop && scrollTrigger < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      setActiveLink(currentSectionId);
+    }
+
+    window.addEventListener('scroll', handleScrollSpy, { passive: true });
+    handleScrollSpy(); // Run once on page load
+
+    // 3. Scroll Reveal Observer (animates elements as you scroll down)
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -453,15 +520,10 @@
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // 3. Header Shadow on Scroll
-    const siteHeader = document.getElementById('siteHeader');
-    window.addEventListener('scroll', () => {
-      siteHeader.classList.toggle('scrolled', window.scrollY > 20);
-    });
-
-    // 4. Pre-select Service in Form
+    // 4. Pre-select Service in Form (and highlight Contact in nav)
     function selectService(serviceName) {
       document.getElementById('serviceSelect').value = serviceName;
+      setActiveLink('contact');
     }
 
     // 5. Contact Form Feedback
