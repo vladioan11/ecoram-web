@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECORAM Mangalia | Servicii Profesionale de Curățenie & Mentenanță</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- TOP INFO BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-group">
+        <span class="topbar-item">
+          <i data-lucide="map-pin"></i>
+          Str. Portului, Mangalia & Sudul Litoralului
+        </span>
+        <span class="topbar-item hide-mobile">
+          <i data-lucide="clock"></i>
+          Luni – Sâmbătă: 08:00 – 20:00
+        </span>
+      </div>
+      <div class="topbar-group">
+        <a href="tel:+40700000000" class="topbar-item">
+          <i data-lucide="phone"></i>
+          <strong>07XX XXX XXX</strong>
+        </a>
+        <button onclick="toggleLanguage()" class="lang-btn">EN / RO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVIGATION BAR (Logo Top-Left) -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-bar">
+      
+      <!-- TOP-LEFT LOGO -->
+      <a href="index.html" class="brand-logo">
+        <!-- To use your own image logo, uncomment below and remove .brand-icon -->
+         <div class="brand-icon">
+          <i data-lucide="sparkles"></i>
+        </div>
+         <img src="img/logo.jpg" alt="Ecoram Logo" style="height: 50px; width: auto;" />
+      
+       <!-- <div>
+          <div class="brand-name">ECO<span class="text-accent">RAM</span></div>
+          <span class="brand-sub" data-ro="Mangalia • Total Serv" data-en="Mangalia • Total Serv">Mangalia • Total Serv</span>
+        </div> -->
+      </a>
+
+      <!-- NAV LINKS -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#acasa" class="active" data-ro="Acasă" data-en="Home">Acasă</a></li>
+        <li><a href="#despre" data-ro="Despre Companie" data-en="About Us">Despre Companie</a></li>
+        <li><a href="#servicii" data-ro="Servicii" data-en="Services">Servicii</a></li>
+        <li><a href="#avantaje" data-ro="De Ce Noi" data-en="Why Us">De Ce Noi</a></li>
+        <li><a href="#contact" data-ro="Contact" data-en="Contact">Contact</a></li>
+      </ul>
+
+      <!-- DESKTOP CTA -->
+      <a href="#contact" class="btn btn-primary hide-mobile">
+        <span data-ro="Solicită Ofertă" data-en="Request a Quote">Solicită Ofertă</span>
+        <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+      </a>
+
+      <!-- MOBILE HAMBURGER BUTTON -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="acasa" class="hero">
+    <div class="container hero-grid">
+      
+      <div class="reveal-left">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          <span data-ro="Partenerul tău local în Mangalia & Constanța" data-en="Your Local Partner in Mangalia & Constanța">
+            Partenerul tău local în Mangalia & Constanța
+          </span>
+        </div>
+
+        <h1>
+          <span data-ro="Standarde Impecabile de " data-en="Impeccable Standards in ">Standarde Impecabile de </span>
+          <span class="text-accent" data-ro="Curățenie & Mentenanță" data-en="Cleaning & Maintenance">Curățenie & Mentenanță</span>
+        </h1>
+
+        <p class="hero-lead" data-ro="De la locuințe private, asociații de proprietari și birouri, până la hoteluri, spălare profesională de pavaje și întreținere spații exterioare în Mangalia și stațiunile din sudul litoralului." data-en="From private homes, owners' associations, and offices to hotels, high-pressure pavement washing, and exterior property maintenance across Mangalia and the southern coast resorts.">
+          De la locuințe private, asociații de proprietari și birouri, până la hoteluri, spălare profesională de pavaje și întreținere spații exterioare în Mangalia și stațiunile din sudul litoralului.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <span data-ro="Cere o Estimare de Preț" data-en="Request a Price Estimate">Cere o Estimare de Preț</span>
+            <i data-lucide="send" style="width:16px; height:16px;"></i>
+          </a>
+          <a href="#servicii" class="btn btn-outline" data-ro="Vezi Toate Serviciile" data-en="Explore All Services">
+            Vezi Toate Serviciile
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">100<span class="text-accent">%</span></div>
+            <div class="stat-label" data-ro="Echipamente Pro" data-en="Pro Equipment">Echipamente Pro</div>
+          </div>
+          <div>
+            <div class="stat-num">24<span class="text-accent">h</span></div>
+            <div class="stat-label" data-ro="Ofertare Rapidă" data-en="Fast Turnaround">Ofertare Rapidă</div>
+          </div>
+          <div>
+            <div class="stat-num">Eco</div>
+            <div class="stat-label" data-ro="Soluții Avizate" data-en="Certified Safe">Soluții Avizate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-right">
+        <div class="hero-img-frame">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80" alt="Ecoram Mangalia Cleaning" />
+        </div>
+        <div class="floating-card">
+          <div class="icon-box">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <div>
+            <strong style="font-size: 0.88rem; display: block;" data-ro="Garanția Calității Ecoram" data-en="Ecoram Quality Guarantee">Garanția Calității Ecoram</strong>
+            <span style="font-size: 0.76rem; color: var(--text-muted);" data-ro="Recepție la finalizarea fiecărei lucrări." data-en="Inspection upon every job completion.">Recepție la finalizarea fiecărei lucrări.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPANY PRESENTATION -->
+  <section id="despre" class="section-alt">
+    <div class="container split-grid">
+      
+      <div class="reveal">
+        <span class="section-tag" data-ro="Prezentarea Companiei" data-en="Company Presentation">Prezentarea Companiei</span>
+        <h2 data-ro="Mai mult decât o firmă de curățenie — soluții complete pentru proprietatea ta" data-en="More than a cleaning company — complete solutions for your property">
+          Mai mult decât o firmă de curățenie — soluții complete pentru proprietatea ta
+        </h2>
+        <p style="color: var(--text-muted); margin-top: 1rem;" data-ro="Cu sediul în Mangalia, ECORAM oferă comunității locale și mediului de afaceri de pe litoral un partener unic pentru curățenie, igienizare și întreținere tehnică." data-en="Based in Mangalia, ECORAM provides the local community and coastal businesses with a single trusted partner for cleaning, sanitization, and technical upkeep.">
+          Cu sediul în Mangalia, <strong>ECORAM</strong> oferă comunității locale și mediului de afaceri de pe litoral un partener unic pentru curățenie, igienizare și întreținere tehnică.
+        </p>
+        <p style="color: var(--text-muted); margin-top: 0.85rem;" data-ro="Intervenim prompt cu aspiratoare industriale, aparate cu injecție-extracție și spălătoare cu înaltă presiune pentru pavaje, fațade, scări de bloc, vile și spații comerciale." data-en="We respond promptly with industrial vacuums, carpet extractors, and high-pressure washers for pavements, facades, apartment blocks, villas, and commercial spaces.">
+          Intervenim prompt cu aspiratoare industriale, aparate cu injecție-extracție și spălătoare cu înaltă presiune pentru pavaje, fațade, scări de bloc, vile și spații comerciale.
+        </p>
+
+        <div style="margin-top: 1.5rem;">
+          <small style="font-weight: 700; text-transform: uppercase; color: var(--text-light);" data-ro="Acoperire Rapidă:" data-en="Rapid Coverage:">Acoperire Rapidă:</small>
+          <div class="coverage-pills">
+            <span class="pill">Mangalia</span>
+            <span class="pill">Saturn & Venus</span>
+            <span class="pill">Jupiter & Neptun</span>
+            <span class="pill">Olimp</span>
+            <span class="pill">2 Mai & Vama Veche</span>
+            <span class="pill">Limanu</span>
+            <span class="pill pill-highlight">Jud. Constanța</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card reveal delay-1">
+          <div class="icon-box" style="margin-bottom: 0.85rem;"><i data-lucide="building-2"></i></div>
+          <h3 data-ro="Rezidențial & HoReCa" data-en="Residential & Hospitality">Rezidențial & HoReCa</h3>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.4rem;" data-ro="Case, vile, apartamente în regim hotelier și pregătire unități turistice." data-en="Homes, villas, vacation rentals, and seasonal hotel preparation.">Case, vile, apartamente în regim hotelier și pregătire unități turistice.</p>
+        </div>
+
+        <div class="pillar-card reveal delay-2">
+          <div class="icon-box" style="margin-bottom: 0.85rem;"><i data-lucide="droplets"></i></div>
+          <h3 data-ro="EcoRam Wash" data-en="EcoRam Wash">EcoRam Wash</h3>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.4rem;" data-ro="Spălare mecanizată cu presiune pentru pavaje, alei, curți, parcări și fațade." data-en="High-pressure mechanized jet washing for pavements, courtyards, and facades.">Spălare mecanizată cu presiune pentru pavaje, alei, curți, parcări și fațade.</p>
+        </div>
+
+        <div class="pillar-card reveal delay-1">
+          <div class="icon-box" style="margin-bottom: 0.85rem;"><i data-lucide="hammer"></i></div>
+          <h3 data-ro="După Constructor" data-en="Post-Construction">După Constructor</h3>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.4rem;" data-ro="Eliminarea urmelor de ciment, vopsea, praf fin și moloz după renovări." data-en="Removing cement residue, paint splatters, and fine dust after renovations.">Eliminarea urmelor de ciment, vopsea, praf fin și moloz după renovări.</p>
+        </div>
+
+        <div class="pillar-card reveal delay-2">
+          <div class="icon-box" style="margin-bottom: 0.85rem;"><i data-lucide="trees"></i></div>
+          <h3 data-ro="Mentenanță & Exterior" data-en="Property Upkeep">Mentenanță & Exterior</h3>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.4rem;" data-ro="Întreținere scări de bloc, spații verzi aferente imobilelor și debarasare." data-en="Stairwell maintenance, building green spaces, and clutter clearing.">Întreținere scări de bloc, spații verzi aferente imobilelor și debarasare.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section id="servicii" class="section-main">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-ro="Portofoliu de Servicii" data-en="Service Portfolio">Portofoliu de Servicii</span>
+        <h2 data-ro="Ce putem face pentru dumneavoastră?" data-en="What Can We Do For You?">Ce putem face pentru dumneavoastră?</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;" data-ro="Intervenții punctuale sau abonamente avantajoase în Mangalia și împrejurimi." data-en="One-time interventions or cost-effective subscriptions in Mangalia and nearby.">
+          Intervenții punctuale sau abonamente avantajoase în Mangalia și împrejurimi.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal delay-1">
+          <div>
+            <div class="service-icon"><i data-lucide="home"></i></div>
+            <h3 data-ro="Curățenie la Domiciliu & Vile" data-en="Home & Villa Cleaning">Curățenie la Domiciliu & Vile</h3>
+            <p data-ro="Aspirare, igienizare băi și bucătării, ștergere praf, spălare geamuri și degresare completă cu soluții sigure pentru familie." data-en="Vacuuming, bathroom and kitchen sanitization, dusting, window washing, and full degreasing with family-safe products.">
+              Aspirare, igienizare băi și bucătării, ștergere praf, spălare geamuri și degresare completă cu soluții sigure pentru familie.
+            </p>
+          </div>
+          <a href="#contact" onclick="selectService('Curățenie la Domiciliu')" class="service-link">
+            <span data-ro="Solicită tarif" data-en="Request rate">Solicită tarif</span>
+            <i data-lucide="chevron-right" style="width:16px; height:16px;"></i>
+          </a>
+        </div>
+
+        <div class="service-card reveal delay-2">
+          <div>
+            <div class="service-icon"><i data-lucide="briefcase"></i></div>
+            <h3 data-ro="Birouri, Spații Comerciale & HoReCa" data-en="Offices, Retail & HoReCa">Birouri, Spații Comerciale & HoReCa</h3>
+            <p data-ro="Curățenie periodică pentru sedii de firme, cabinete, magazine, hoteluri și apartamente în regim hotelier pe litoral." data-en="Periodic cleaning for offices, clinics, stores, hotels, and coastal short-term rental apartments.">
+              Curățenie periodică pentru sedii de firme, cabinete, magazine, hoteluri și apartamente în regim hotelier pe litoral.
+            </p>
+          </div>
+          <a href="#contact" onclick="selectService('Birouri / HoReCa')" class="service-link">
+            <span data-ro="Solicită tarif" data-en="Request rate">Solicită tarif</span>
+            <i data-lucide="chevron-right" style="width:16px; height:16px;"></i>
+          </a>
+        </div>
+
+        <div class="service-card reveal delay-3">
+          <div>
+            <div class="service-icon"><i data-lucide="waves"></i></div>
+            <h3 data-ro="Spălare Pavaje & Fațade" data-en="Pavement & Facade Washing">Spălare Pavaje & Fațade</h3>
+            <p data-ro="Jet de înaltă presiune pentru îndepărtarea mușchiului, petelor de ulei și murdăriei de pe dale, beton amprentat și garduri." data-en="High-pressure jet washing to remove moss, oil stains, and grime from pavers, stamped concrete, and fences.">
+              Jet de înaltă presiune pentru îndepărtarea mușchiului, petelor de ulei și murdăriei de pe dale, beton amprentat și garduri.
+            </p>
+          </div>
+          <a href="#contact" onclick="selectService('Curățare Pavaje & Exterior')" class="service-link">
+            <span data-ro="Solicită tarif" data-en="Request rate">Solicită tarif</span>
+            <i data-lucide="chevron-right" style="width:16px; height:16px;"></i>
+          </a>
+        </div>
+
+        <div class="service-card reveal delay-1">
+          <div>
+            <div class="service-icon"><i data-lucide="users"></i></div>
+            <h3 data-ro="Asociații de Proprietari" data-en="Owners' Associations">Asociații de Proprietari</h3>
+            <p data-ro="Măturat și spălat scări de bloc, igienizare ascensoare, balustrade, geamuri și întreținerea spațiului verde aferent blocului." data-en="Sweeping and mopping stairwells, sanitizing elevators, handrails, windows, and maintaining surrounding green areas.">
+              Măturat și spălat scări de bloc, igienizare ascensoare, balustrade, geamuri și întreținerea spațiului verde aferent blocului.
+            </p>
+          </div>
+          <a href="#contact" onclick="selectService('Asociații de Proprietari')" class="service-link">
+            <span data-ro="Solicită tarif" data-en="Request rate">Solicită tarif</span>
+            <i data-lucide="chevron-right" style="width:16px; height:16px;"></i>
+          </a>
+        </div>
+
+        <div class="service-card reveal delay-2">
+          <div>
+            <div class="service-icon"><i data-lucide="sofa"></i></div>
+            <h3 data-ro="Injecție-Extracție Tapițerii" data-en="Upholstery & Carpet Extraction">Injecție-Extracție Tapițerii</h3>
+            <p data-ro="Curățare profundă pentru canapele, saltele, fotolii și mochete cu eliminarea acarienilor și a petelor persistente." data-en="Deep extraction cleaning for sofas, mattresses, armchairs, and carpets, removing dust mites and stubborn stains.">
+              Curățare profundă pentru canapele, saltele, fotolii și mochete cu eliminarea acarienilor și a petelor persistente.
+            </p>
+          </div>
+          <a href="#contact" onclick="selectService('Tapițerii & Mochete')" class="service-link">
+            <span data-ro="Solicită tarif" data-en="Request rate">Solicită tarif</span>
+            <i data-lucide="chevron-right" style="width:16px; height:16px;"></i>
+          </a>
+        </div>
+
+        <div class="service-card reveal delay-3">
+          <div>
+            <div class="service-icon"><i data-lucide="wrench"></i></div>
+            <h3 data-ro="Alte Servicii & Mentenanță" data-en="Other Services & Maintenance">Alte Servicii & Mentenanță</h3>
+            <p data-ro="Curățenie după constructor, toaletare curți, evacuare deșeuri nepericuloase și pregătire imobile pentru vânzare sau închiriere." data-en="Post-construction cleanup, yard trimming, non-hazardous waste clearing, and property staging for sale or rent.">
+              Curățenie după constructor, toaletare curți, evacuare deșeuri nepericuloase și pregătire imobile pentru vânzare sau închiriere.
+            </p>
+          </div>
+          <a href="#contact" onclick="selectService('Alte Servicii & Mentenanță')" class="service-link">
+            <span data-ro="Solicită tarif" data-en="Request rate">Solicită tarif</span>
+            <i data-lucide="chevron-right" style="width:16px; height:16px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US BANNER -->
+  <section id="avantaje" class="accent-banner">
+    <div class="container banner-grid">
+      <div class="reveal">
+        <h2 style="font-size: 1.75rem;" data-ro="De ce clienții aleg ECORAM?" data-en="Why Clients Choose ECORAM">De ce clienții aleg ECORAM?</h2>
+        <p style="opacity: 0.9; margin-top: 0.5rem; font-size: 0.92rem;" data-ro="Seriozitate, echipamente proprii și rezultate vizibile de la prima intervenție." data-en="Reliability, dedicated equipment, and visible results from the first visit.">
+          Seriozitate, echipamente proprii și rezultate vizibile de la prima intervenție.
+        </p>
+      </div>
+      <div class="banner-box reveal delay-1">
+        <h3 data-ro="1. Personal Verificat" data-en="1. Vetted Staff">1. Personal Verificat</h3>
+        <p data-ro="Echipă proprie, instruită și atentă la fiecare detaliu din proprietatea dumneavoastră." data-en="Trained in-house team attentive to every detail of your property.">Echipă proprie, instruită și atentă la fiecare detaliu din proprietatea dumneavoastră.</p>
+      </div>
+      <div class="banner-box reveal delay-2">
+        <h3 data-ro="2. Evaluare Gratuită" data-en="2. Free Assessment">2. Evaluare Gratuită</h3>
+        <p data-ro="Stabilim costul corect înainte de începerea lucrării, fără taxe ascunse." data-en="Clear upfront pricing before work begins, with zero hidden fees.">Stabilim costul corect înainte de începerea lucrării, fără taxe ascunse.</p>
+      </div>
+      <div class="banner-box reveal delay-3">
+        <h3 data-ro="3. Factură & Contract" data-en="3. Invoice & Contract">3. Factură & Contract</h3>
+        <p data-ro="Colaborăm transparent cu persoane fizice, firme, hoteluri și asociații de proprietari." data-en="Transparent invoicing for individuals, companies, hotels, and associations.">Colaborăm transparent cu persoane fizice, firme, hoteluri și asociații de proprietari.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section-alt">
+    <div class="container contact-grid">
+      
+      <div class="reveal-left">
+        <span class="section-tag" data-ro="Contactează-ne" data-en="Get In Touch">Contactează-ne</span>
+        <h2 data-ro="Solicită o ofertă personalizată" data-en="Request a Custom Quote">Solicită o ofertă personalizată</h2>
+        <p style="color: var(--text-muted); margin-top: 0.75rem;" data-ro="Completează formularul sau sună-ne direct. Răspundem rapid cu o estimare adaptată nevoilor tale." data-en="Fill out the form or call us directly. We respond quickly with a tailored estimate.">
+          Completează formularul sau sună-ne direct. Răspundem rapid cu o estimare adaptată nevoilor tale.
+        </p>
+
+        <div class="info-list">
+          <div class="info-item">
+            <div class="icon-box"><i data-lucide="map-pin"></i></div>
+            <div>
+              <small style="color: var(--text-light); font-weight: 700; text-transform: uppercase;" data-ro="Sediu Local" data-en="Local Office">Sediu Local</small>
+              <div style="font-weight: 700;">Str. Portului, Mangalia, Jud. Constanța</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="icon-box"><i data-lucide="phone-call"></i></div>
+            <div>
+              <small style="color: var(--text-light); font-weight: 700; text-transform: uppercase;" data-ro="Telefon & WhatsApp" data-en="Phone & WhatsApp">Telefon & WhatsApp</small>
+              <div style="font-weight: 700;">+40 7XX XXX XXX</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="icon-box"><i data-lucide="mail"></i></div>
+            <div>
+              <small style="color: var(--text-light); font-weight: 700; text-transform: uppercase;">Email</small>
+              <div style="font-weight: 700;">contact@ecoram-mangalia.ro</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal-right">
+        <h3 style="margin-bottom: 1.5rem;" data-ro="Trimite-ne un mesaj rapid" data-en="Send Us a Quick Message">Trimite-ne un mesaj rapid</h3>
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div>
+              <label class="form-label" data-ro="Nume Complet *" data-en="Full Name *">Nume Complet *</label>
+              <input type="text" class="form-control" required placeholder="Ex: Andrei Popescu" />
+            </div>
+            <div>
+              <label class="form-label" data-ro="Telefon *" data-en="Phone Number *">Telefon *</label>
+              <input type="tel" class="form-control" required placeholder="Ex: 0722 000 000" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label class="form-label" data-ro="Localitate / Zonă" data-en="Location / Area">Localitate / Zonă</label>
+              <input type="text" class="form-control" value="Mangalia" />
+            </div>
+            <div>
+              <label class="form-label" data-ro="Serviciul Dorit *" data-en="Requested Service *">Serviciul Dorit *</label>
+              <select id="serviceSelect" class="form-control">
+                <option value="Curățenie la Domiciliu">Curățenie la Domiciliu / Vile</option>
+                <option value="Birouri / HoReCa">Curățenie Birouri / HoReCa</option>
+                <option value="Curățare Pavaje & Exterior">Spălare Pavaje & Exterior (EcoRam Wash)</option>
+                <option value="Asociații de Proprietari">Curățenie Asociații de Proprietari</option>
+                <option value="Tapițerii & Mochete">Curățare Tapițerii & Mochete</option>
+                <option value="Alte Servicii & Mentenanță">După Constructor / Alte Servicii</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-ro="Detalii (Suprafață, frecvență, întrebări)" data-en="Details (Surface area, frequency, questions)">Detalii (Suprafață, frecvență, întrebări)</label>
+            <textarea rows="4" class="form-control" placeholder="Descrieți pe scurt ce aveți nevoie..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i data-lucide="check-circle-2" style="width:18px; height:18px;"></i>
+            <span data-ro="Trimite Solicitarea" data-en="Submit Request">Trimite Solicitarea</span>
+          </button>
+
+          <div id="formSuccess" class="form-success">
+            Mulțumim! Mesajul a fost înregistrat. Echipa ECORAM Mangalia vă va contacta în scurt timp.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div style="font-weight: 800; color: #fff;">
+        ECO<span class="text-accent">RAM</span> MANGALIA
+      </div>
+      <p>© 2026 ECORAM TOTALSERV / ECORAM WASH S.R.L. Mangalia. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    lucide.createIcons();
+
+    // 1. Mobile Navigation Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // 2. Scroll Reveal Observer (animates elements as you scroll down)
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 3. Header Shadow on Scroll
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // 4. Pre-select Service in Form
+    function selectService(serviceName) {
+      document.getElementById('serviceSelect').value = serviceName;
+    }
+
+    // 5. Contact Form Feedback
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const banner = document.getElementById('formSuccess');
+      banner.style.display = 'block';
+      e.target.reset();
+      setTimeout(() => { banner.style.display = 'none'; }, 6000);
+    }
+
+    // 6. RO / EN Language Switcher
+    let currentLang = 'ro';
+    function toggleLanguage() {
+      currentLang = currentLang === 'ro' ? 'en' : 'ro';
+      document.querySelectorAll('[data-ro]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+  </script>
+</body>
+</html>
