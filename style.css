@@ -49,10 +49,9 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.25rem; /* Offsets sticky header when clicking nav links */
   font-size: 16px;
-  scroll-padding-top: 5.25rem;  
 }
-
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -122,9 +121,9 @@ h3 {
 }
 
 /* ==========================================================================
-   3. SCROLL REVEAL ANIMATIONS
+   3. SCROLL REVEAL ANIMATIONS (Bulletproof Fallback)
    ========================================================================== */
-.reveal {
+body.js-ready .reveal {
   opacity: 0;
   transform: translateY(32px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
@@ -132,23 +131,23 @@ h3 {
   will-change: opacity, transform;
 }
 
-.reveal-left {
+body.js-ready .reveal-left {
   opacity: 0;
   transform: translateX(-36px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal-right {
+body.js-ready .reveal-right {
   opacity: 0;
   transform: translateX(36px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.active,
-.reveal-left.active,
-.reveal-right.active {
+body.js-ready .reveal.active,
+body.js-ready .reveal-left.active,
+body.js-ready .reveal-right.active {
   opacity: 1;
   transform: translate(0, 0);
 }
@@ -159,7 +158,9 @@ h3 {
 .delay-3 { transition-delay: 0.3s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-left, .reveal-right {
+  body.js-ready .reveal,
+  body.js-ready .reveal-left,
+  body.js-ready .reveal-right {
     opacity: 1;
     transform: none;
     transition: none;
@@ -224,7 +225,7 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   transition: box-shadow var(--transition);
@@ -242,49 +243,25 @@ h3 {
   gap: 1.5rem;
 }
 
-/* Logo Top-Left */
+/* Logo Top-Left: Automatically scales to 85% of the navbar height */
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  height: 100%;
 }
 
-.brand-icon {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: var(--radius-md);
-  background: var(--accent);
-  color: var(--text-on-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 16px var(--accent-glow);
-  transition: transform var(--transition), background var(--transition);
+.brand-logo img {
+  height: 85%;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition);
 }
 
-.brand-logo:hover .brand-icon {
-  transform: scale(1.05) rotate(-3deg);
-  background: var(--accent-hover);
+.brand-logo:hover img {
+  transform: scale(1.04);
 }
 
-.brand-name {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.brand-sub {
-  display: block;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--text-light);
-  margin-top: 0.25rem;
-}
-
-/* Navigation Links */
 /* Navigation Links */
 .nav-links {
   display: flex;
@@ -442,15 +419,17 @@ h3 {
 }
 
 .stat-num {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
   font-weight: 800;
   line-height: 1.1;
+  color: var(--accent);
 }
 
 .stat-label {
   font-size: 0.78rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
+  margin-top: 0.2rem;
 }
 
 .hero-visual {
@@ -654,7 +633,7 @@ h3 {
 }
 
 /* ==========================================================================
-   9. CONTACT SECTION & FORM
+   9. CONTACT SECTION, SOCIAL BUTTONS & FORM
    ========================================================================== */
 .contact-grid {
   display: grid;
@@ -676,6 +655,38 @@ h3 {
   padding: 1.1rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
+}
+
+/* Social Action Buttons (WhatsApp & Facebook) */
+.social-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1da851;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-facebook {
+  background-color: #1877F2;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.25);
+}
+
+.btn-facebook:hover {
+  background-color: #1460c4;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .form-card {
